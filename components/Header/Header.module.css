@@ -1,0 +1,10 @@
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 12px;
+  padding: 12px;
+}
+.element {
+  list-style-type: none;
+}
