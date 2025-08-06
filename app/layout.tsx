@@ -21,8 +21,10 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  preview,
 }: Readonly<{
   children: React.ReactNode
+  preview: React.ReactNode
 }>) {
   return (
     <html lang='en'>
@@ -30,6 +32,8 @@ export default function RootLayout({
         <TanstackProvider>
           <Header />
           {children}
+
+          {preview}
         </TanstackProvider>
       </body>
     </html>

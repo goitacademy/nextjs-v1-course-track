@@ -13,15 +13,15 @@ const Header = async () => {
             <Link href='/'>Home</Link>
           </li>
           <li className={style.element}>
-            <ul style={{ fontSize: '10px' }}>
+            {/* <ul style={{ fontSize: '10px' }}>
               <Link href={`/notes/filter/all`}>All</Link>
               {categories.map((cat) => (
                 <li key={cat.id}>
                   <Link href={`/notes/filter/${cat.id}`}>{cat.name}</Link>
                 </li>
               ))}
-            </ul>
-            {/* <Link href='/notes'>Notes</Link> */}
+            </ul> */}
+            <Link href='/notes/filter/all'>Notes</Link>
           </li>
           <li className={style.element}>
             <Link href='/profile'>Profile</Link>

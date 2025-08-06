@@ -1,5 +1,8 @@
+import { redirect } from 'next/navigation'
+
 const NotFound = () => {
-  return <div>NotFound</div>
+  redirect('/')
+  // return <div>NotFound</div>
 }
 
 export default NotFound
