@@ -1,7 +1,7 @@
 import axios from 'axios'
 
-axios.defaults.baseURL = 'https://next-docs-api.onrender.com'
-// axios.defaults.baseURL = 'http://localhost:4000'
+// axios.defaults.baseURL = 'https://next-docs-api.onrender.com'
+axios.defaults.baseURL = 'http://localhost:4000'
 
 export type NoteType = {
   id: 'string'

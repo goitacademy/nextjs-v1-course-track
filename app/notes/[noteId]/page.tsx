@@ -1,9 +1,24 @@
 import { getSingleNote } from '@/lib/api'
 import NoteDetailsPageClient from './NoteDetailsPage.client'
 import { dehydrate, HydrationBoundary, QueryClient } from '@tanstack/react-query'
+import { Metadata } from 'next'
 
 type Props = {
   params: Promise<{ noteId: string }>
+}
+
+export const generateMetadata = async ({ params }: Props): Promise<Metadata> => {
+  const { noteId } = await params
+  const data = await getSingleNote(noteId)
+
+  return {
+    title: data.title.slice(0, 8),
+    description: data.content.slice(0, 10),
+    openGraph: {
+      title: data.title.slice(0, 8),
+      description: 'qwerty',
+    },
+  }
 }
 
 const NoteDetails = async ({ params }: Props) => {
@@ -15,7 +30,6 @@ const NoteDetails = async ({ params }: Props) => {
     queryKey: ['note', noteId],
     queryFn: () => getSingleNote(noteId),
   })
-  // const note = await getSingleNote(noteId)
 
   return (
     <HydrationBoundary state={dehydrate(queryClient)}>
@@ -25,30 +39,3 @@ const NoteDetails = async ({ params }: Props) => {
 }
 
 export default NoteDetails
-
-// CSR in SSR >>>
-// import Action from '@/components/Action/Action'
-// import { getSingleNote } from '@/lib/api'
-
-// type Props = {
-//   params: Promise<{ noteId: string }>
-// }
-
-// const NoteDetails = async ({ params }: Props) => {
-//   const { noteId } = await params
-//   const note = await getSingleNote(noteId)
-
-//   return (
-//     <div>
-//       <Action />
-//       <br />
-//       <h2>{note.title}</h2>
-//       <br />
-//       <hr />
-//       <br />
-//       <p>{note.content}</p>
-//     </div>
-//   )
-// }
-
-// export default NoteDetails
