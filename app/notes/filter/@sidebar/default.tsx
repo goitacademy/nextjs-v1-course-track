@@ -5,7 +5,7 @@ const Sidebar = async () => {
   const categories = await getCategories()
   return (
     <div>
-      <h2>Categories</h2>
+      <h3>Categories</h3>
       <hr />
       <ul style={{ fontSize: '10px' }}>
         <Link href={`/notes/filter/all`}>All</Link>
@@ -15,6 +15,10 @@ const Sidebar = async () => {
           </li>
         ))}
       </ul>
+      <br />
+      <hr />
+      <br />
+      <Link href='/notes/actions/create'>Create new Note</Link>
     </div>
   )
 }
