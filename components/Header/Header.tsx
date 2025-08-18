@@ -4,7 +4,6 @@ import { getCategories } from '@/lib/api'
 
 const Header = async () => {
   const categories = await getCategories()
-
   return (
     <header>
       <nav>
@@ -28,6 +27,12 @@ const Header = async () => {
           </li>
           <li className={style.element}>
             <Link href='/about'>About</Link>
+          </li>
+          <li className={style.element}>
+            <Link href='/login'>Login</Link>
+          </li>
+          <li className={style.element}>
+            <Link href='/register'>Register</Link>
           </li>
         </ul>
       </nav>
