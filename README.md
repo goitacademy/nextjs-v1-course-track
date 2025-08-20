@@ -200,6 +200,18 @@
         <li>add in handleLogout</li>
         <li>add setUser in sign-in & sign-up pages</li>
     </ul>
-    <li>pre-render error with getCategories</li>
+</ul>
+</details>
+
+<details>
+  <summary>Заняття 2</summary>
+<ul>
+    <li>middleware</li>
+    <ul>
+        <li>private routes</li>
+        <li>public routes</li>
+        <li>public layout refresh</li>
+    </ul>
+    <li>private requests</li>
 </ul>
 </details>

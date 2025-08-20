@@ -1,5 +1,5 @@
 import CreateNoteForm from '@/components/CreateNoteForm/CreateNoteForm'
-import { getCategories } from '@/lib/api'
+import { getCategories } from '@/lib/api/clientApi'
 
 const CreateNotePage = async () => {
   const categories = await getCategories()

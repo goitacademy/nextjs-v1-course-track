@@ -1,6 +1,6 @@
 import NoteList from '@/components/NoteList/NoteList'
 import Search from '@/components/Search/Search'
-import { getNotes } from '@/lib/api'
+import { getNotes } from '@/lib/api/clientApi'
 
 type Props = {
   params: Promise<{ slug: string[] }>

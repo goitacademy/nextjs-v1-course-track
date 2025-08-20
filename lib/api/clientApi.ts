@@ -1,11 +1,8 @@
-import axios from 'axios'
+import { nextServer } from './api'
 
-// axios.defaults.baseURL = 'https://next-docs-api.onrender.com'
-// axios.defaults.baseURL = 'http://localhost:3000/api'
-const nextServer = axios.create({
-  baseURL: 'http://localhost:3000/api',
-  withCredentials: true,
-})
+export type CheckSessionResponse = {
+  success: boolean
+}
 
 export type CreateNoteData = {
   title: string
@@ -88,5 +85,20 @@ export const login = async (payload: LoginRequestData) => {
 
 export const register = async (payload: RegisterRequestData) => {
   const { data } = await nextServer.post<User>(`/auth/register`, payload)
+  return data
+}
+
+export const checkSession = async () => {
+  const { data } = await nextServer.get<CheckSessionResponse>(`/auth/session`)
+  return data.success
+}
+
+export const getMe = async () => {
+  const { data } = await nextServer.get<User>(`/auth/me`)
+  return data
+}
+
+export const logOut = async () => {
+  const { data } = await nextServer.post(`/auth/logout`)
   return data
 }
