@@ -1,13 +1,17 @@
 'use client'
-import { login, LoginRequestData } from '@/lib/api'
+import { login, LoginRequestData } from '@/lib/api/clientApi'
+import { useAuthStore } from '@/lib/store/authStore'
 import { useRouter } from 'next/navigation'
 
 const Login = () => {
   const router = useRouter()
+  const setAuth = useAuthStore((state) => state.setAuth)
+
   const handleLogin = async (formData: FormData) => {
     const data = Object.fromEntries(formData) as LoginRequestData
-    const res = await login(data)
-    if (res) {
+    const user = await login(data)
+    if (user) {
+      setAuth(user)
       router.push('/profile')
     }
   }
