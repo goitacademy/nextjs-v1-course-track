@@ -1,4 +1,7 @@
-# Module-01
+# Трек занять для інструкторів курсу Next.js v1
+
+
+## Module-01
 
 <details>
   <summary>Заняття 1</summary>
@@ -54,7 +57,7 @@
 <br/>
 <br/>
 
-# Module-02
+## Module-02
 
 <details>
   <summary>Заняття 1</summary>
@@ -93,7 +96,7 @@
 <br/>
 <br/>
 
-# Module-03
+## Module-03
 
 <details>
   <summary>Заняття 1</summary>
@@ -138,7 +141,7 @@
 <br/>
 <br/>
 
-# Module-04
+## Module-04
 
 <details>
   <summary>Заняття 1</summary>
